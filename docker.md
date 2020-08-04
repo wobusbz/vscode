@@ -15,7 +15,7 @@
 4. 强制停止容器 docker kill CONTAINERID
 5. 删除容器  docker rm CONTAINERID
 6. 强制删除容器 docker rm -f CONTAINERID
-7. 批量删除容器  docker rm -f $(docker -qa) or docker ps -qa | docker rm
+7. 批量删除容器  docker rm -f $(docker ps -qa) or docker ps -qa | docker rm
 8. 后台运行容器  docker run -d NAMES
 9. 查看容器日志 docker logs -t -f --tail CONTAINERID (-t 是加入的时间戳 -f 跟随最新的日志打印 --tail 数字显示多少条)
 10. 查看docker进程ID  docker top  CONTAINERID
@@ -38,9 +38,11 @@ ip::containerPort<br/>
 hostPort:containerPort<br/>
 containerPort<br/>
 
+15. docker commit -a="作者" -m="描述信息" CONTAINERID  tag
+
 
 #### 镜像操作
-1. 批量删除镜像 docker rmi $(docker -qa) 
+1. 批量删除镜像 docker rmi $(docker images -qa) 
 2. 删除镜像 docker rmi CONTAINERID
 3. 查找镜像 docker serach -s 30 NAMES (-s 查找有30个S的镜像)
 
